@@ -1,13 +1,13 @@
-package Aufgabe_3;
+package Aufgabe_5;
 
-public class Auto extends Fahrzeug implements Comparable<Auto>
+public class Auto extends Fahrzeug
 {
     private boolean klimaanlage;
     private short airbags;
 
-    public Auto(short reifen, String farbe, short ps, short tueren, short airbags) {
+    public Auto(short reifen, Color farbe, short ps, short tueren, short airbags) {
         super(reifen, farbe, ps, tueren);
-        this.klimaanlage = false;
+        klimaanlage = false;
         this.airbags = airbags;
     }
 
@@ -19,7 +19,7 @@ public class Auto extends Fahrzeug implements Comparable<Auto>
     @Override
     public String toString()
     {
-        return "Mein Auto hat " + getPs() + " und fährt mit " + getGeschwindigkeit() + " km/h";
+        return "Farbe des Wagens: " + getFarbe();
     }
 
     public void setKlimaanlage(boolean klimaanlage) {
@@ -43,23 +43,5 @@ public class Auto extends Fahrzeug implements Comparable<Auto>
     public void klimaanlageAus()
     {
         setKlimaanlage(false);
-    }
-
-    @Override
-
-    // gleiche PS - selbe Ebene (Sortierung dann nach Liste
-    // mehr PS - über dem letzen Auto
-    // weniger PS - unter dem letzten Auto
-    public int compareTo(Auto a)
-    {
-        if (this.getPs() == a.getPs())
-        {
-            return 0;
-        } else if (this.getPs() > a.getPs())
-        {
-            return 1;
-        } else {
-            return -1;
-        }
     }
 }

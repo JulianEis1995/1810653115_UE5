@@ -1,9 +1,9 @@
-package Aufgabe_3;
+package Aufgabe_5;
 
 public class Fahrzeug
 {
+    private Color farbe;
     private short reifen;
-    private String farbe;
     private short ps;
     private short tueren;
     private boolean gestartet;
@@ -20,11 +20,11 @@ public class Fahrzeug
         this.reifen = reifen;
     }
 
-    public String getFarbe() {
+    public Color getFarbe() {
         return farbe;
     }
 
-    public void setFarbe(String farbe) {
+    public void setFarbe(Color farbe) {
         this.farbe = farbe;
     }
 
@@ -112,7 +112,12 @@ public class Fahrzeug
     }
 
     //Konstruktor
-    public Fahrzeug(short reifen, String farbe, short ps, short tueren) {
+    public Fahrzeug(short reifen, Color farbe, short ps, short tueren)
+    {
+        if(farbe == null)
+        {
+            farbe = Color.WHITE;
+        }
         this.reifen = reifen;
         this.farbe = farbe;
         this.ps = ps;
